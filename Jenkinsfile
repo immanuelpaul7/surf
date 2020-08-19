@@ -1,9 +1,5 @@
 pipeline {
-
-  agent {
-      label 'master' 
-  } 
-
+  def mvn_version = 'Maven'
   stages {      
       //This is a top level stage. When you setup your pipeline on the SN instance      
       //the stage name 'DevATF' here needs to match the Orchestration stage field      
