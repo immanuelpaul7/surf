@@ -10,12 +10,11 @@ pipeline {
       //the Steps related list
       stage('DevATF') {
         //this specifies that this stage will be triggered on event from dev branch
-        when {
-          branch 'dev'
-        }
-        steps {
-          snDevOpsStep()
-          echo "Compiling..."
+        if (env.BRANCH_NAME == "dev") {
+          steps {
+            snDevOpsStep()
+            echo "Compiling..."
+          }
         }
       }
 
@@ -26,12 +25,11 @@ pipeline {
       //the Steps related list
       stage('DevHealthScan') {
         //this specifies that this stage will be triggered on event from dev branch
-        when {
-          branch 'dev'
-        }
-        steps {
-          snDevOpsStep()
-          echo "DevHealthScan only in dev..."
+        if (env.BRANCH_NAME == "dev") {
+          steps {
+            snDevOpsStep()
+            echo "DevHealthScan only in dev..."
+          }
         }
       }
 
