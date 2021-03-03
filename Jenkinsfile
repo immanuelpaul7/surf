@@ -130,6 +130,7 @@ pipeline {
         }
         steps {
           snDevOpsStep()
+          snDevOpsChange()          
           echo "ProdDeploy when branch is master "
         }
       }
