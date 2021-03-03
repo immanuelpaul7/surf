@@ -15,6 +15,7 @@ pipeline {
         }
         steps {
           snDevOpsStep()
+          snDevOpsChange()
           echo "Compiling..."
         }
       }
